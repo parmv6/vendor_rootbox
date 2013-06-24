@@ -90,10 +90,4 @@ LOCAL_MODULE_SUFFIX := .apk
 include $(BUILD_PREBUILT)
 endif
 
-include $(CLEAR_VARS)
-LOCAL_MODULE := libGoogleAnalyticsV2
-LOCAL_SRC_FILES := common/lib/$(LOCAL_MODULE).jar
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := .jar
-LOCAL_MODULE_CLASS := JAVA_LIBRARIES
-include $(BUILD_PREBUILT)
+
