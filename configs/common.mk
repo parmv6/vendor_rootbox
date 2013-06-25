@@ -2,7 +2,7 @@
 PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/common
 
 # Common dictionaries
-# PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/dictionaries
 
 # SuperUser
 SUPERUSER_EMBEDDED := true
@@ -13,6 +13,7 @@ PRODUCT_PACKAGES += \
     AOKPtips \
     AppWidgetPicker \
     GooManager \
+    LatinImeDictionaryPack \
     mGerrit \
     PermissionsManager \
     ROMControl \
@@ -29,11 +30,17 @@ PRODUCT_PACKAGES += \
     audio_effects.conf \
     DSPManager \
     libcyanogen-dsp \
-    LockClock
+    LockClock \
+    Music
 
-# PA Packages 
+# PA Packages
+ifdef PA_PREF_FIX
+PRODUCT_PACKAGES += \
+    PaPrefs
+else 
 PRODUCT_PACKAGES += \
     ParanoidPreferences
+endif
 
 # RootBox build.prop tweaks
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -53,6 +60,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.root_access=3
 
 PRODUCT_COPY_FILES += \
+    vendor/rootbox/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml \
     vendor/rootbox/prebuilt/common/etc/resolv.conf:system/etc/resolv.conf
 
 # Backup Tool
@@ -62,9 +70,9 @@ PRODUCT_COPY_FILES += \
     vendor/rootbox/prebuilt/common/bin/50-backupScript.sh:system/addon.d/50-backupScript.sh
 
 # Camera effects
-#PRODUCT_COPY_FILES +=  \
-#    vendor/rootbox/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-#    vendor/rootbox/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+PRODUCT_COPY_FILES +=  \
+    vendor/rootbox/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+    vendor/rootbox/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # ParanoidAndroid Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/prebuilt/preferences/$(TARGET_PRODUCT)
@@ -86,6 +94,7 @@ PRODUCT_COPY_FILES += \
     vendor/rootbox/prebuilt/common/etc/init.local.rc:root/init.aokp.rc \
     vendor/rootbox/prebuilt/common/etc/init.d/00start:system/etc/init.d/00start \
     vendor/rootbox/prebuilt/common/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
+    vendor/rootbox/prebuilt/common/etc/init.d/99complete:system/etc/init.d/99complete \
     vendor/rootbox/prebuilt/common/etc/sysctl.conf:system/etc/sysctl.conf \
     vendor/rootbox/prebuilt/common/bin/sysinit:system/bin/sysinit
 
@@ -94,16 +103,23 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 PRODUCT_PACKAGES += \
+    openvpn \
     e2fsck \
     mke2fs \
     tune2fs \
-    libssh
+    libssh \
+    ssh \
+    sshd \
+    sshd-config \
+    ssh-keygen \
+    sftp \
+    scp
 
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
-  ro.config.ringtone=Ring_Digital_02.ogg \
-  ro.config.notification_sound=F1_New_SMS.ogg \
-  ro.config.alarm_alert=Alarm_Beep_03.ogg
+    ro.config.ringtone=Scarabaeus.ogg \
+    ro.config.notification_sound=Antimony.ogg \
+    ro.config.alarm_alert=Scandium.ogg
 
 PRODUCT_COPY_FILES += packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
 

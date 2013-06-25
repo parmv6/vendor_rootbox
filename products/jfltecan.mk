@@ -1,5 +1,5 @@
 # Inherit AOSP device configuration for t0lte.
-$(call inherit-product, device/samsung/jfltecan/full_jfltecan.mk)
+$(call inherit-product, device/samsung/jflteatt/full_jfltecan.mk)
 
 # Inherit GSM common stuff
 $(call inherit-product, vendor/rootbox/configs/gsm.mk)
@@ -11,7 +11,7 @@ $(call inherit-product, vendor/rootbox/configs/common.mk)
 PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/s4-common
 
 # PA OVERLAY_TARGET
-OVERLAY_TARGET := pa_xxhdpi
+OVERLAY_TARGET := pa_xhdpi
 
 # Setup device specific product configuration.
 PRODUCT_NAME := rootbox_jfltecan
@@ -26,5 +26,5 @@ PRODUCT_RELEASE_NAME := jfltecan
 
 # Copy Bootanimation
 PRODUCT_COPY_FILES += \
-    vendor/rootbox/prebuilt/bootanimation/bootanimation_1920_1080.zip:system/media/bootanimation.zip
+    vendor/rootbox/prebuilt/xhdpi/bootanimation.zip:system/media/bootanimation.zip
 
