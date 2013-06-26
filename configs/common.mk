@@ -2,7 +2,7 @@
 PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/common
 
 # Common dictionaries
-PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/dictionaries
+#PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/overlay/dictionaries
 
 # SuperUser
 SUPERUSER_EMBEDDED := true
@@ -13,8 +13,8 @@ PRODUCT_PACKAGES += \
     AOKPtips \
     AppWidgetPicker \
     GooManager \
-    LatinImeDictionaryPack \
     mGerrit \
+    PerformanceControl \
     PermissionsManager \
     ROMControl \
     Superuser \
@@ -70,9 +70,9 @@ PRODUCT_COPY_FILES += \
     vendor/rootbox/prebuilt/common/bin/50-backupScript.sh:system/addon.d/50-backupScript.sh
 
 # Camera effects
-PRODUCT_COPY_FILES +=  \
-    vendor/rootbox/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
-    vendor/rootbox/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
+#PRODUCT_COPY_FILES +=  \
+#    vendor/rootbox/prebuilt/common/media/LMprec_508.emd:system/media/LMprec_508.emd \
+#    vendor/rootbox/prebuilt/common/media/PFFprec_600.emd:system/media/PFFprec_600.emd
 
 # ParanoidAndroid Overlays
 PRODUCT_PACKAGE_OVERLAYS += vendor/rootbox/prebuilt/preferences/$(TARGET_PRODUCT)
@@ -117,9 +117,9 @@ PRODUCT_PACKAGES += \
 
 # Default ringtone
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.config.ringtone=Scarabaeus.ogg \
-    ro.config.notification_sound=Antimony.ogg \
-    ro.config.alarm_alert=Scandium.ogg
+  ro.config.ringtone=Ring_Digital_02.ogg \
+  ro.config.notification_sound=F1_New_SMS.ogg \
+  ro.config.alarm_alert=Alarm_Beep_03.ogg
 
 PRODUCT_COPY_FILES += packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:/system/etc/permissions/android.software.live_wallpaper.xml
 
