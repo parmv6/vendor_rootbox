@@ -6,14 +6,16 @@ DATE = $(shell date +%Y%m%d)
 ifneq ($(RB_BUILD),)
 # RootBox Official properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.developerid=Bajee \
+    ro.goo.developerid=zeelog \
+    ro.goo.board=blade \
     ro.goo.rom=RootBox \
     ro.goo.version=$(DATE) \
     ro.rootbox.version=RootBox-JB-$(TARGET_PRODUCT)-$(RB_BUILD)
 else
 # RootBox Nightlies properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.goo.developerid=Bajee \
+    ro.goo.developerid=zeelog \
+    ro.goo.board=blade \
     ro.goo.rom=RootBoxNightlies \
     ro.goo.version=$(DATE) \
     ro.rootbox.version=RootBox-JB-$(TARGET_PRODUCT)-Nightly-$(DATE)

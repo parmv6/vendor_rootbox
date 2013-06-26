@@ -130,7 +130,4 @@ PRODUCT_COPY_FILES += packages/wallpapers/LivePicker/android.software.live_wallp
 include vendor/rootbox/configs/themes_common.mk
 
 # Bring in all audio files
-include frameworks/base/data/sounds/NewAudio.mk
-
-# Extra Ringtones
-include frameworks/base/data/sounds/AudioPackageNewWave.mk
+include frameworks/base/data/sounds/OldAudio.mk
