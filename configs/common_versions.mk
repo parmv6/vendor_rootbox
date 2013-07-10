@@ -22,6 +22,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.rootbox.version=RootBox-JB-$(TARGET_PRODUCT)-Nightly-$(DATE)
 endif
 
+# needed for statistics
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.rootbox.branch=$(RB_BRANCH) \
+        ro.rootbox.device=$(RB_PRODUCT)
 
 # Camera shutter sound property
 PRODUCT_PROPERTY_OVERRIDES += \
