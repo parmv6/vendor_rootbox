@@ -22,6 +22,7 @@ PRODUCT_PACKAGES += \
 
 # RootBox Packages
 PRODUCT_PACKAGES += \
+    RootBoxPapers \
     RootBox \
     Trebuchet
 
