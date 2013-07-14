@@ -18,7 +18,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.goo.developerid=zeelog \
     ro.goo.board=blade \
     ro.goo.rom=RootBoxNightlies \
-    ro.goo.version=2 \
+    ro.goo.version=3 \
     ro.rootbox.version=RootBox-JB-$(TARGET_PRODUCT)-Nightly-$(DATE)
 endif
 
