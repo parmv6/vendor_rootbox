@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
 # CM Packages
 PRODUCT_PACKAGES += \
     audio_effects.conf \
+    CMFileManager \
     DSPManager \
     libcyanogen-dsp \
     LockClock \
