@@ -14,7 +14,6 @@ PRODUCT_PACKAGES += \
     AppWidgetPicker \
     GooManager \
     mGerrit \
-    PerformanceControl \
     PermissionsManager \
     ROMControl \
     Superuser \
